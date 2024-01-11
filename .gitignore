@@ -2,3 +2,7 @@
 .vs/
 x64/
 *.exe
+deb/
+rel/
+ssl_server
+

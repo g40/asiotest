@@ -9,7 +9,7 @@
 MAPPING:=~
 
 # name of build target
-TARGET:=syncs_ssl
+TARGET:=ssl_server
 
 # controls installation directory
 PROJECT_TYPE:=exe
@@ -37,7 +37,8 @@ CFLAGS+=
 # N.B. LIBS is for system libraries (pthread for example)
 # LIBS += <lib>
 LIBS += -lssl
-LIBS += -lasio
+LIBS += -lcrypto
+# LIBS += -lasio
 
 # PROJECT_LIBS contains recursive dependencies on libraries
 # built as part of this project from source.
