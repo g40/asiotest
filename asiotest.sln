@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "asiotest", "asiotest.vcxproj", "{35EFA6B6-8F91-449C-A986-1B47D51AF938}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "client", "client\client.vcxproj", "{11B32AAD-2BB7-4B73-8C80-3BF45FCBD8DB}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "syncs_ssl", "syncs_ssl\syncs_ssl.vcxproj", "{7FF4A36F-2FEC-41DE-B8CF-B01022DBB36F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{35EFA6B6-8F91-449C-A986-1B47D51AF938}.Debug|x64.ActiveCfg = Debug|x64
+		{35EFA6B6-8F91-449C-A986-1B47D51AF938}.Debug|x64.Build.0 = Debug|x64
+		{11B32AAD-2BB7-4B73-8C80-3BF45FCBD8DB}.Debug|x64.ActiveCfg = Debug|x64
+		{11B32AAD-2BB7-4B73-8C80-3BF45FCBD8DB}.Debug|x64.Build.0 = Debug|x64
+		{7FF4A36F-2FEC-41DE-B8CF-B01022DBB36F}.Debug|x64.ActiveCfg = Debug|x64
+		{7FF4A36F-2FEC-41DE-B8CF-B01022DBB36F}.Debug|x64.Build.0 = Debug|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E7E70FB7-8968-419D-92D2-C7BA5E779BB8}
+	EndGlobalSection
+EndGlobal

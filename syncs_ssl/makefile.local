@@ -1,0 +1,56 @@
+###############################################################################
+# Auto-generated: R:\src\console\asiotest\syncs_ssl\syncs_ssl.vcxproj
+# 2024-01-11T22:37:27
+# version:1.0.1.8
+###############################################################################
+
+# mapping to target root directory
+# e.g. ~/src/test
+MAPPING:=~
+
+# name of build target
+TARGET:=syncs_ssl
+
+# controls installation directory
+PROJECT_TYPE:=exe
+
+# Set OS compilation flags
+ifeq ($(OSTYPE), Linux)
+	CXXFLAGS += -D_IS_LINUX
+	CFLAGS += -D_IS_LINUX
+else
+ifeq ($(OSTYPE), Darwin)
+	CXXFLAGS += -D_IS_OSX
+	CFLAGS += -D_IS_OSX
+else
+	CXXFLAGS += -D_IS_WINDOWS
+	CFLAGS += --D_IS_WINDOWS
+endif
+endif
+# compilation flags for C++ code
+CXXFLAGS+=
+
+# compilation flags for C code
+CFLAGS+=
+
+# library paths (one per line, order is important!)
+# N.B. LIBS is for system libraries (pthread for example)
+# LIBS += <lib>
+LIBS += ssl
+LIBS += asio
+
+# PROJECT_LIBS contains recursive dependencies on libraries
+# built as part of this project from source.
+# add relative path of the static library to PROJECT_LIBS, e.g:
+# PROJECT_LIBS += ../ffts/libffts.a
+
+# include paths (one per line)
+# INCLUDES += -I path/to/header 
+
+# If this is a library with a .h file add it below
+# The .h file will be installed to /usr/local/include
+# INCFILES+=
+
+CPP_SOURCES += \
+	syncs.cpp
+
