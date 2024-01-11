@@ -36,8 +36,8 @@ CFLAGS+=
 # library paths (one per line, order is important!)
 # N.B. LIBS is for system libraries (pthread for example)
 # LIBS += <lib>
-LIBS += ssl
-LIBS += asio
+LIBS += -lssl
+LIBS += -lasio
 
 # PROJECT_LIBS contains recursive dependencies on libraries
 # built as part of this project from source.
