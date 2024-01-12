@@ -5,6 +5,8 @@ ASIO is a rather large and sprawling affair, made more complicated by having 11 
 
 This pair of examples shows, I hope, the absolute minimum amount of code to get a working SSL connection between a client and server, the latter acting as an echo service.
 
+ASIO itself is a header only affair (+1) and is contained in a submodule. Hence once the repo is cloned, do a `git submodule init` to obtain that code.
+
 ##### Windows #####
 
 For Windows/Visual Studio, setup is critical and extremely tedious unless vcpkg is used.
