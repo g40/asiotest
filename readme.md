@@ -36,3 +36,5 @@ Ensure libraries are installed:
 2. Run the server: `server 3456`
 3. Run the client: `client localhost 3456`
 4. Send simple text messages, `quit` to shutdown client.
+
+If you run the client on a different host, you will need to copy `certs/rootca.pem` which contain the relevant public keys.
