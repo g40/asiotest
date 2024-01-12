@@ -1,6 +1,7 @@
 
 .vs/
 x64/
+certs/
 *.exe
 deb/
 rel/

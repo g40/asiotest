@@ -48,14 +48,7 @@
   <ItemGroup>
     <!--$ClInclude-->
     <None Include=".gitignore" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="server.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="sync.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
-    </ClCompile>
+    <None Include="makcert.cmd" />
   </ItemGroup>
   <ItemGroup>
     <!--$MASM-->

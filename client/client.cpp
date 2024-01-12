@@ -82,6 +82,8 @@ int main(int argc, char* argv[])
         asio::io_context io_context;
         using ssl_socket = asio::ssl::stream<asio::ip::tcp::socket>;
 
+        std::array<char, 128> buf;
+        asio::error_code error;
 
         if (1)
         {
@@ -89,8 +91,8 @@ int main(int argc, char* argv[])
             // finding CA certificates.
             asio::ssl::context ctx(asio::ssl::context::sslv23);
             ctx.set_default_verify_paths();
-            ctx.load_verify_file("ca.pem");
-            ctx.set_verify_mode(asio::ssl::verify_peer);
+            ctx.load_verify_file("certs/rootca.pem");
+            //ctx.set_verify_mode(asio::ssl::verify_peer);
 
             ssl_socket socket(io_context, ctx);
             asio::ip::tcp::resolver resolver(io_context);
@@ -103,34 +105,27 @@ int main(int argc, char* argv[])
             // Perform SSL handshake and verify the remote host's
             // certificate.
 
-
-            socket.set_verify_mode(asio::ssl::verify_peer);
-            socket.set_verify_callback(asio::ssl::host_name_verification(argv[1]));
+            // socket.set_verify_callback(asio::ssl::host_name_verification(argv[1]));
+            socket.set_verify_callback(&verify_certificate);
             socket.handshake(ssl_socket::client);
 
             for (;;)
             {
                 std::cout << "Enter message: ";
-                //char request[max_length];
                 std::string message;
-                std::cin >> message;
+                std::getline(std::cin,message);
+
+                size_t len = asio::write(socket, asio::buffer(message));
+                std::cout << " wrote " << len << " (" << message.size() << ")" << std::endl;
                 if (message == "quit")
                 {
-                    //socket.shutdown_both();
                     socket.lowest_layer().close();
                     break;
                 }
 
-
-                //size_t request_length = std::strlen(request);
-                //size_t len = asio::write(socket, asio::buffer(request, request_length));
-                size_t len = asio::write(socket, asio::buffer(message));
-                std::cout << " wrote " << len << std::endl;
-                std::array<char, 128> buf;
-                asio::error_code error;
+                //
                 len = socket.read_some(asio::buffer(buf), error);
-                std::cout << " read " << len << std::endl;
-                if (error == asio::error::eof)
+                if (len == 0 || error == asio::error::eof)
                 {
                     std::cout << "connection closed by host" << std::endl;
                     break; // Connection closed cleanly by peer.
@@ -139,9 +134,11 @@ int main(int argc, char* argv[])
                 {
                     throw asio::system_error(error); // Some other error.
                 }
-                std::cout.write(buf.data(), len);
+                //
+                std::cout << " read " << len << std::endl;
+                std::string s(buf.data(), buf.data() + len);
+                std::cout << s << std::endl;
             }
-
         }
         else
         {
@@ -154,26 +151,20 @@ int main(int argc, char* argv[])
             for (;;)
             {
                 std::cout << "Enter message: ";
-                //char request[max_length];
                 std::string message;
-                std::cin >> message;
+                std::getline(std::cin, message);
+
+                size_t len = asio::write(socket, asio::buffer(message));
+                std::cout << " wrote " << len << " (" << message.size() << ")" << std::endl;
                 if (message == "quit")
                 {
                     //socket.shutdown_both();
                     socket.close();
                     break;
                 }
-                    
 
-                //size_t request_length = std::strlen(request);
-                //size_t len = asio::write(socket, asio::buffer(request, request_length));
-                size_t len = asio::write(socket, asio::buffer(message));
-                std::cout << " wrote " << len << std::endl;
-                std::array<char, 128> buf;
-                asio::error_code error;
                 len = socket.read_some(asio::buffer(buf), error);
-                std::cout << " read " << len << std::endl;
-                if (error == asio::error::eof)
+                if (len == 0)
                 {
                     std::cout << "connection closed by host" << std::endl;
                     break; // Connection closed cleanly by peer.
@@ -182,7 +173,9 @@ int main(int argc, char* argv[])
                 {
                     throw asio::system_error(error); // Some other error.
                 }
-                std::cout.write(buf.data(), len);
+                std::cout << " read " << len << std::endl;
+                std::string s(buf.data(), buf.data()+len);
+                std::cout << s << std::endl;
             }
         }
 

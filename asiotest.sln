@@ -7,7 +7,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "asiotest", "asiotest.vcxpro
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "client", "client\client.vcxproj", "{11B32AAD-2BB7-4B73-8C80-3BF45FCBD8DB}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "syncs_ssl", "syncs_ssl\syncs_ssl.vcxproj", "{7FF4A36F-2FEC-41DE-B8CF-B01022DBB36F}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "server", "server\server.vcxproj", "{7FF4A36F-2FEC-41DE-B8CF-B01022DBB36F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
