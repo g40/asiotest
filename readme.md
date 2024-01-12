@@ -30,9 +30,9 @@ Ensure libraries are installed:
 2. `make -C ./server`
 3. `make -C ./client`
 
-##### run #####
+##### Operation #####
 
-1. Run makcert.cmd to generate required (self-signed) certificates
+1. Run makcert.cmd (makcert.sh on Linux/MacOS) to generate required (self-signed) certificates
 2. Run the server: `server 3456`
 3. Run the client: `client localhost 3456`
 4. Send simple text messages, `quit` to shutdown client.
