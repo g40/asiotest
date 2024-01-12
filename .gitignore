@@ -6,4 +6,6 @@ certs/
 deb/
 rel/
 ssl_server
+ssl_client
+
 

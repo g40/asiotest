@@ -9,7 +9,7 @@
 MAPPING:=~
 
 # name of build target
-TARGET:=client
+TARGET:=ssl_client
 
 # controls installation directory
 PROJECT_TYPE:=exe
@@ -37,7 +37,7 @@ CFLAGS+=
 # N.B. LIBS is for system libraries (pthread for example)
 # LIBS += <lib>
 # LIBS += -lasio
-LIBS += -lopenssl
+LIBS += -lssl
 LIBS += -lcrypto
 
 # PROJECT_LIBS contains recursive dependencies on libraries
