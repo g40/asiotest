@@ -62,7 +62,7 @@ endif
 # can be overridden in makefile.local
 CXXFLAGS+=-Wno-unused-function
 CXXFLAGS+=-Wno-unused-variable
-CXXFLAGS+=-Wno-unused-private-field
+# CXXFLAGS+=-Wno-unused-private-field
 
 
 # coverage analysis

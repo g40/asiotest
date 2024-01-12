@@ -22,15 +22,12 @@
 #include <asio.hpp>
 #include <asio/ssl.hpp>
 
+//-----------------------------------------------------------------------------
+// autolink
 #ifdef WIN32
 #pragma comment(lib, "ws2_32.lib")
 #pragma comment(lib, "Iphlpapi.lib")
 #pragma comment(lib, "crypt32.lib")
-#endif
-
-#ifdef _DEBUG
-#pragma comment(lib, "libssl.lib")
-#else
 #pragma comment(lib, "libssl.lib")
 #endif
 
