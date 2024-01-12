@@ -50,6 +50,7 @@
     <None Include=".gitignore" />
     <None Include=".gitmodules" />
     <None Include="makcert.cmd" />
+    <None Include="makcert.sh" />
     <None Include="readme.md" />
   </ItemGroup>
   <ItemGroup>
