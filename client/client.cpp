@@ -1,20 +1,13 @@
 /*
 
-    A super simple application to demonstrate authentication and Curve security with plain ZeroMQ
-
     Setup is critical.
 
     git clone https://github.com/Microsoft/vcpkg
     cd vcpkg
-    ls
     bootstrap-vcpkg.bat
-    vcpkg install zeromq:x64-windows-static
-    vcpkg install libsodium:x64-windows-static
-    vcpkg install zeromq[curve]:x64-windows-static
-    vcpkg install zeromq[sodium]:x64-windows-static
-    vcpkg remove zeromq[sodium]:x64-windows-static
-    vcpkg install zeromq[sodium]:x64-windows-static
-    vcpkg install zeromq[sodium]:x64-windows-static
+    vcpkg integrate install
+    vcpkg install asio:x64-windows-static
+    vcpkg install openssl:x64-windows-static
 
 */
 

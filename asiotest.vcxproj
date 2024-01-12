@@ -48,7 +48,9 @@
   <ItemGroup>
     <!--$ClInclude-->
     <None Include=".gitignore" />
+    <None Include=".gitmodules" />
     <None Include="makcert.cmd" />
+    <None Include="readme.md" />
   </ItemGroup>
   <ItemGroup>
     <!--$MASM-->

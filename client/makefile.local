@@ -1,6 +1,6 @@
 ###############################################################################
-# Auto-generated: R:\src\console\asiotest\syncs_ssl\syncs_ssl.vcxproj
-# 2024-01-11T22:37:27
+# Auto-generated: R:\src\console\asiotest\client\client.vcxproj
+# 2024-01-12T15:38:29
 # version:1.0.1.8
 ###############################################################################
 
@@ -9,7 +9,7 @@
 MAPPING:=~
 
 # name of build target
-TARGET:=ssl_server
+TARGET:=client
 
 # controls installation directory
 PROJECT_TYPE:=exe
@@ -36,9 +36,9 @@ CFLAGS+=
 # library paths (one per line, order is important!)
 # N.B. LIBS is for system libraries (pthread for example)
 # LIBS += <lib>
-LIBS += -lssl
-LIBS += -lcrypto
 # LIBS += -lasio
+LIBS += -lopenssl
+LIBS += -lcrypto
 
 # PROJECT_LIBS contains recursive dependencies on libraries
 # built as part of this project from source.
@@ -46,14 +46,14 @@ LIBS += -lcrypto
 # PROJECT_LIBS += ../ffts/libffts.a
 
 # include paths (one per line)
-# INCLUDES += -I path/to/header 
 INCLUDES += -I ../asio/asio
 INCLUDES += -I ../asio/asio/include
+
 
 # If this is a library with a .h file add it below
 # The .h file will be installed to /usr/local/include
 # INCFILES+=
 
 CPP_SOURCES += \
-	server.cpp
+	client.cpp
 

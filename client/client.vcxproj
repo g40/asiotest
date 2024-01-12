@@ -53,6 +53,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <!--$ClInclude-->
+    <None Include="makefile" />
+    <None Include="makefile.local" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="client.cpp" />
