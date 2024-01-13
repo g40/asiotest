@@ -3,7 +3,7 @@ rem Thanks!
 rem https://www.digitalocean.com/community/tutorials/openssl-essentials-working-with-ssl-certificates-private-keys-and-csrs
 rem
 
-rem rootca. used by client
+rem rootca. used by client. check with openssl x509 -in rootca.pem -text -noout
 openssl genrsa -out certs/rootca.key 4096
 openssl req -x509 -new -nodes -key certs/rootca.key -days 20000 -out certs/rootca.pem -subj "/C=GB/ST=London/L=London/O=CompanyName/CN=root"
 
@@ -17,6 +17,6 @@ openssl verify -CAfile certs/rootca.pem certs/rootca.pem
 openssl verify -CAfile certs/rootca.pem certs/user.pem
 openssl verify -CAfile certs/user.pem certs/user.pem
 
-rem for exchange. this is slw to generate
+rem for exchange. this is slow to generate
 openssl dhparam -out certs/dh4096.pem 4096
 
