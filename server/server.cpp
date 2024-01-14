@@ -88,6 +88,9 @@ int main(int argc, char* argv[])
 				for (;;)
 				{
 					// sync read operation
+					// can also create a buffer from pointer/size tuple
+					// const char* p = ...; size_t bytes = ...;
+					// asio::buffer buf(p,bytes);
 					size_t len = socket.read_some(asio::buffer(buf), error);
 					if (len == 0 || error)
 					{
