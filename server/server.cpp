@@ -84,9 +84,10 @@ int main(int argc, char* argv[])
 				socket.set_verify_callback(asio::ssl::host_name_verification(argv[1]));
 				socket.handshake(ssl_socket::server);
 
+				// read + then echo messages from client
 				for (;;)
 				{
-					// read operation
+					// sync read operation
 					size_t len = socket.read_some(asio::buffer(buf), error);
 					if (len == 0 || error)
 					{
@@ -100,7 +101,7 @@ int main(int argc, char* argv[])
 						socket.lowest_layer().close();
 						break;
 					}
-					// write operation
+					// sync write operation
 					asio::write(socket, asio::buffer(message));
 				}
 			}
