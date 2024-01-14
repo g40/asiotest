@@ -1,7 +1,10 @@
 /*
 
-	A super simple application to demonstrate authentication using ASIO + OpenSSL
+	Demonstrates how to use synchronous mode and OpenSSL authentication using ASIO
 
+	Requires ASIO, OpenSSL. Use vcpkg. See https://github.com/g40/asiotest#
+
+	MIT license
 */
 
 

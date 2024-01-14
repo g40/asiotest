@@ -1,13 +1,8 @@
 /*
 
-    Setup is critical.
+    Demonstrates how to use synchronous mode and OpenSSL authentication using ASIO
 
-    git clone https://github.com/Microsoft/vcpkg
-    cd vcpkg
-    bootstrap-vcpkg.bat
-    vcpkg integrate install
-    vcpkg install asio:x64-windows-static
-    vcpkg install openssl:x64-windows-static
+    Requires ASIO, OpenSSL. Use vcpkg. See https://github.com/g40/asiotest#
 
 */
 
